@@ -1,0 +1,17 @@
+.board {
+  display: block;
+  margin-top: 10px;
+  position: relative;
+  left: 50%;
+  margin-left: -150px;
+  background-color: #d4edda;
+  border: black !important;
+}
+h1 {
+  margin-top: 5%;
+  font-size: 2em !important;
+}
+
+.alert {
+  margin: 2% 10%;
+}

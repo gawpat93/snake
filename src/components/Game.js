@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import * as d3 from "d3";
-
-const w = 600,
-  h = 600,
-  res = 30,
-  refreshRate = 200;
+import "./style.css";
+import "bootstrap";
+const w = 300,
+  h = 300,
+  res = 20;
 
 class Game extends Component {
   constructor() {
@@ -25,7 +25,7 @@ class Game extends Component {
     };
   }
   getFood = (check = true) => {
-    let getValue = max => Math.round((Math.random() * max) / res);
+    let getValue = max => Math.round((Math.random() * (max - res)) / res);
     let x = getValue(w);
     let y = getValue(h);
     while (check) {
@@ -53,7 +53,6 @@ class Game extends Component {
   };
   moveSnake = () => {
     let snake = this.state.snake;
-    console.log(snake);
     let nextHead = {
       x: this.state.snake.head.x + this.state.snake.direction.x,
       y: this.state.snake.head.y + this.state.snake.direction.y
@@ -118,7 +117,6 @@ class Game extends Component {
   };
   componentDidMount() {
     document.addEventListener("keyup", e => {
-      console.log(e.key);
       if (e.key === "ArrowUp") {
         this.changeDirection(0, -1);
       } else if (e.key === "ArrowDown") {
@@ -130,16 +128,15 @@ class Game extends Component {
       }
     });
     this.svg = d3
-      .select("body")
+      .select("#board")
       .append("svg")
+      .attr("class", "board")
       .attr("width", w)
-      .attr("height", h)
-      .style("margin-left", 100)
-      .style("background-color", "black");
+      .attr("height", h);
     this.interval = setInterval(() => {
       this.moveSnake();
       this.draw();
-    }, refreshRate);
+    }, this.props.refreshRate);
   }
 
   draw() {
@@ -151,7 +148,9 @@ class Game extends Component {
       .attr("y", food.y * res)
       .attr("width", res)
       .attr("height", res)
-      .attr("fill", "yellow");
+      .style("stroke", "#28a745")
+      .style("stroke-width", 1)
+      .attr("fill", "#c3e6cb");
     let data = this.getSnake();
     this.svg
       .selectAll("rect")
@@ -162,17 +161,21 @@ class Game extends Component {
       .attr("y", d => d.y * res)
       .attr("width", res)
       .attr("height", res)
-      .attr("fill", "green");
+      .style("stroke", "#d4edda")
+      .style("stroke-width", 1)
+      .attr("fill", "#28a745");
   }
 
   render() {
+    const text = `Food: x: ${this.state.food.x}  y:  ${this.state.food.y}\n
+    Head: x: ${this.state.snake.head.x}  y:  ${this.state.snake.head.y}\n`;
     return (
-      <div>
-        {`Food: x: ${this.state.food.x}  y:  ${this.state.food.y}\n`}
-        {`Head: x: ${this.state.snake.head.x}  y:  ${
-          this.state.snake.head.y
-        }\n`}
-      </div>
+      <>
+        <div id="board" style={{ width: "100%", height: "100%" }} />
+        <div className="alert alert-success fade show" role="alert">
+          {text}
+        </div>
+      </>
     );
   }
 }

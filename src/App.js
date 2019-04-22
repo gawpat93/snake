@@ -1,23 +1,18 @@
 import React, { Component } from "react";
 import Game from "./components/Game";
 import "./App.css";
-
+const refreshRate = 200;
 class App extends Component {
   state = {
-    data: [12, 5, 6, 6, 9, 10],
-    width: 700,
-    height: 500,
     id: "root"
   };
 
   render() {
     return (
       <div className="App">
-        <Game
-          data={this.state.data}
-          width={this.state.width}
-          height={this.state.height}
-        />
+        <h1 className="text-success">Snake</h1>
+        <hr />
+        <Game data={this.state.data} refreshRate={refreshRate} />
       </div>
     );
   }
