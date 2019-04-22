@@ -19,7 +19,8 @@ class Game extends Component {
           x: 2,
           y: 0
         },
-        tail: []
+        tail: [],
+        dead: false
       },
       food: this.getFood(false)
     };
@@ -76,11 +77,12 @@ class Game extends Component {
       e => e.x === nextHead.x && e.y === nextHead.y
     );
     if (tailEaten) {
-      alert("THE END");
+      snake.dead = true;
     }
     const foodEaten =
       this.state.food.x === nextHead.x && this.state.food.y === nextHead.y;
     if (foodEaten) {
+      this.props.changePointsSum(1);
       if (snake.tail.length === 0) {
         snake.tail = [snake.head];
       } else if (snake.tail.length > 0) {
@@ -136,6 +138,9 @@ class Game extends Component {
     this.interval = setInterval(() => {
       this.moveSnake();
       this.draw();
+      if (this.state.snake.dead) {
+        clearInterval(this.interval);
+      }
     }, this.props.refreshRate);
   }
 
@@ -152,6 +157,7 @@ class Game extends Component {
       .style("stroke-width", 1)
       .attr("fill", "#c3e6cb");
     let data = this.getSnake();
+    let bodyColor = this.state.snake.dead ? "red" : "#28a745";
     this.svg
       .selectAll("rect")
       .data(data)
@@ -163,7 +169,7 @@ class Game extends Component {
       .attr("height", res)
       .style("stroke", "#d4edda")
       .style("stroke-width", 1)
-      .attr("fill", "#28a745");
+      .attr("fill", bodyColor);
   }
 
   render() {
