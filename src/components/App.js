@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import Game from "./components/Game";
-import "./App.css";
-const refreshRate = 200;
+import Game from "./Game";
+import Config from "../tools/Config";
+const refreshRate = Config.Game.refreshRate;
+
 class App extends Component {
   state = {
     points: 0,

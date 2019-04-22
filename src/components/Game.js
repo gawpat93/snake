@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import * as d3 from "d3";
-import "./style.css";
+import "../tools/style.css";
 import "bootstrap";
 import Message from "./Message";
 import $ from "jquery";
-const w = 300,
-  h = 300,
-  res = 20;
+import Config from "../tools/Config";
+const config = Config.Game;
+const w = config.width;
+const h = config.height;
+const res = config.resolution;
 
 class Game extends Component {
   constructor() {
