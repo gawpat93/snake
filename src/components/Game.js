@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import * as d3 from "d3";
 import "./style.css";
 import "bootstrap";
+import Message from "./Message";
+import $ from "jquery";
 const w = 300,
   h = 300,
   res = 20;
@@ -78,6 +80,7 @@ class Game extends Component {
     );
     if (tailEaten) {
       snake.dead = true;
+      $("#message").modal("show");
     }
     const foodEaten =
       this.state.food.x === nextHead.x && this.state.food.y === nextHead.y;
@@ -114,7 +117,6 @@ class Game extends Component {
     }
     snake.direction.x = _x;
     snake.direction.y = _y;
-
     this.setState({ snake });
   };
   componentDidMount() {
@@ -181,6 +183,11 @@ class Game extends Component {
         <div className="alert alert-success fade show" role="alert">
           {text}
         </div>
+        <Message
+          id="message"
+          points={this.props.getPoints()}
+          resetGame={this.props.resetGame}
+        />
       </>
     );
   }

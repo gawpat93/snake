@@ -4,11 +4,16 @@ import "./App.css";
 const refreshRate = 200;
 class App extends Component {
   state = {
-    points: 0
+    points: 0,
+    key: 0
   };
   changePointsSum = value => {
     let points = this.state.points;
     this.setState({ points: points + value });
+  };
+  resetGame = () => {
+    const key = this.state.key;
+    this.setState({ key: key + 1, points: 0 });
   };
   render() {
     return (
@@ -18,9 +23,12 @@ class App extends Component {
         <span className="badge badge-dark">{this.state.points}</span>
         <hr />
         <Game
+          key={this.state.key}
           data={this.state.data}
           refreshRate={refreshRate}
           changePointsSum={this.changePointsSum}
+          getPoints={() => this.state.points}
+          resetGame={this.resetGame}
         />
       </div>
     );
