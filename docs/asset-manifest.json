@@ -1,13 +1,13 @@
 {
-  "main.css": "/static/css/main.2e1260d2.chunk.css",
-  "main.js": "/static/js/main.237eec18.chunk.js",
-  "main.js.map": "/static/js/main.237eec18.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/js/2.710c7aed.chunk.js": "/static/js/2.710c7aed.chunk.js",
-  "static/js/2.710c7aed.chunk.js.map": "/static/js/2.710c7aed.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.85886ce414d32ff1b1a50b35b93cc3ed.js": "/precache-manifest.85886ce414d32ff1b1a50b35b93cc3ed.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/main.2e1260d2.chunk.css.map": "/static/css/main.2e1260d2.chunk.css.map"
+  "main.css": "/snake/static/css/main.2e1260d2.chunk.css",
+  "main.js": "/snake/static/js/main.be6490f5.chunk.js",
+  "main.js.map": "/snake/static/js/main.be6490f5.chunk.js.map",
+  "runtime~main.js": "/snake/static/js/runtime~main.ccc81976.js",
+  "runtime~main.js.map": "/snake/static/js/runtime~main.ccc81976.js.map",
+  "static/js/2.710c7aed.chunk.js": "/snake/static/js/2.710c7aed.chunk.js",
+  "static/js/2.710c7aed.chunk.js.map": "/snake/static/js/2.710c7aed.chunk.js.map",
+  "index.html": "/snake/index.html",
+  "precache-manifest.73ff419adb33c407cca357c5a6c3bdba.js": "/snake/precache-manifest.73ff419adb33c407cca357c5a6c3bdba.js",
+  "service-worker.js": "/snake/service-worker.js",
+  "static/css/main.2e1260d2.chunk.css.map": "/snake/static/css/main.2e1260d2.chunk.css.map"
 }

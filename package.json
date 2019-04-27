@@ -1,5 +1,6 @@
 {
   "name": "snake",
+  "homepage": "https://patgaw09318.github.io/snake/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
