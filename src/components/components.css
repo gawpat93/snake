@@ -1,0 +1,25 @@
+.controlButtons .btn-up,
+.controlButtons .btn-right,
+.controlButtons .btn-left,
+.controlButtons .btn-down {
+  width: 16%;
+  text-align: center;
+  border-color: black;
+}
+.controlButtons .btn-up,
+.controlButtons .btn-down {
+  display: block;
+  margin-left: 42%;
+}
+.controlButtons .btn-right,
+.controlButtons .btn-lef {
+  display: inline-block;
+}
+.desktopHide {
+  display: none;
+}
+@media (max-width: 800px) {
+  .mobileShow {
+    display: block;
+  }
+}

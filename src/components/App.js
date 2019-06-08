@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Game from "./Game";
 import Config from "../tools/Config";
+import "./components.css";
+import Menu from "./Menu";
 const refreshRate = Config.Game.refreshRate;
 
 class App extends Component {
@@ -31,6 +33,7 @@ class App extends Component {
           getPoints={() => this.state.points}
           resetGame={this.resetGame}
         />
+        <Menu />
       </div>
     );
   }

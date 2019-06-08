@@ -133,6 +133,20 @@ class Game extends Component {
         this.changeDirection(1, 0);
       }
     });
+
+    document.getElementById("btnUp").addEventListener("click", () => {
+      this.changeDirection(0, -1);
+    });
+    document.getElementById("btnDown").addEventListener("click", () => {
+      this.changeDirection(0, 1);
+    });
+    document.getElementById("btnRight").addEventListener("click", () => {
+      this.changeDirection(1, 0);
+    });
+    document.getElementById("btnLeft").addEventListener("click", () => {
+      this.changeDirection(-1, 0);
+    });
+
     this.svg = d3
       .select("#board")
       .append("svg")
