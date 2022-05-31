@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## DEMO:
 
-[Snake](https://patgaw09318.github.io/snake/)
+[Snake](https://gawpat93.github.io/snake/)
 
 ## Available Scripts
 
